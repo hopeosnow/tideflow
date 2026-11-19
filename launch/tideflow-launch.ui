@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- 主窗口 -->
+  <object class="GtkWindow" id="mainwindow">
+    <property name="default-width">800</property>
+    <property name="default-height">500</property>
+    <property name="title">Tideflow Launcher</property>
+    <property name="decorated">False</property>
+    <child>
+      <!-- 顶部搜索框 -->
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <property name="margin-top">15</property>
+        <property name="margin-bottom">15</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+
+        <child>
+          <object class="GtkSearchEntry" id="search_entry">
+            <property name="placeholder-text">Search applications...</property>
+          </object>
+        </child>
+
+        <!-- 下面的左右分栏 -->
+        <child>
+          <object class="GtkBox" id="content_box">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">15</property>
+            <property name="vexpand">True</property>
+
+            <!-- 左侧分类列表 -->
+            <child>
+              <object class="GtkScrolledWindow" id="left_scroll">
+                <property name="width-request">150</property>
+                <property name="hscrollbar-policy">never</property>
+                <child>
+                  <object class="GtkListBox" id="category_list">
+                    <!-- 随便放几个假分类 -->
+                    <child><object class="GtkLabel"><property name="label">All Apps</property><property name="margin-top">8</property><property name="margin-bottom">8</property></object></child>
+                    <child><object class="GtkLabel"><property name="label">Development</property><property name="margin-top">8</property><property name="margin-bottom">8</property></object></child>
+                    <child><object class="GtkLabel"><property name="label">Games</property><property name="margin-top">8</property><property name="margin-bottom">8</property></object></child>
+                    <child><object class="GtkLabel"><property name="label">Internet</property><property name="margin-top">8</property><property name="margin-bottom">8</property></object></child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <!-- 右侧应用网格 -->
+            <child>
+              <object class="GtkScrolledWindow" id="right_scroll">
+                <property name="hexpand">True</property>
+                <property name="hscrollbar-policy">never</property>
+                <child>
+                  <object class="GtkFlowBox" id="app_flowbox">
+                    <property name="homogeneous">True</property>
+                    <property name="max-children-per-line">4</property>
+                    <property name="row-spacing">15</property>
+                    <property name="column-spacing">15</property>
+                    <!-- 假装有几个应用 -->
+                    <child><object class="GtkButton"><property name="label">Firefox</property><property name="width-request">80</property><property name="height-request">80</property></object></child>
+                    <child><object class="GtkButton"><property name="label">Terminal</property><property name="width-request">80</property><property name="height-request">80</property></object></child>
+                    <child><object class="GtkButton"><property name="label">VS Code</property><property name="width-request">80</property><property name="height-request">80</property></object></child>
+                    <child><object class="GtkButton"><property name="label">Files</property><property name="width-request">80</property><property name="height-request">80</property></object></child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
